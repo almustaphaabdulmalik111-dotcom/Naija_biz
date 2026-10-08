@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="NaijaBiz — Nigerian money and business toolkit.">
+<title>NaijaBiz — Money & Business Toolkit</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:#f6f7f9;color:#111827;line-height:1.5}.top{height:70px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #e7e9ed;position:sticky;top:0;z-index:5}.brand{color:inherit;text-decoration:none;font-size:21px;font-weight:850}.brand b{display:inline-grid;place-items:center;background:#0a8f5a;color:white;width:34px;height:34px;border-radius:10px;margin-right:8px}.top nav{display:flex;gap:25px}.top nav a{color:#667085;text-decoration:none;font-size:14px;font-weight:700}#theme{border:1px solid #ddd;background:white;border-radius:9px;padding:8px 11px;cursor:pointer}.hero,.section{max-width:1180px;margin:auto;padding:78px 6%}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:center}.eyebrow{color:#0a8f5a;font-size:12px;font-weight:900;letter-spacing:1.5px;margin:0 0 10px}.hero h1{font-size:clamp(45px,6vw,75px);line-height:1.02;letter-spacing:-3px;margin:0}.hero em{font-style:normal;color:#0a8f5a}.lead{color:#667085;font-size:18px;max-width:640px;margin:24px 0 30px}.btn{display:inline-block;background:#0a8f5a;color:#fff;text-decoration:none;font-weight:800;padding:13px 19px;border-radius:11px}.dashboard{background:#111827;color:#fff;padding:28px;border-radius:23px;box-shadow:0 22px 55px #11182722}.dash-head{color:#aab2bf;font-size:13px}.dash-head span{float:right;color:#61d99e}.amount{font-size:38px;font-weight:900;margin-top:44px}.dashboard small{color:#9ca6b5}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0}.stats div{background:#1b2431;padding:15px;border-radius:12px}.stats b,.stats small{display:block}.bar{height:7px;background:#2a3545;border-radius:9px;margin-bottom:9px}.bar i{display:block;width:64%;height:100%;background:#4bc98b;border-radius:9px}.heading{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:30px}.heading h2,.section>h2{font-size:40px;letter-spacing:-1.5px;margin:0}.heading>p{max-width:410px;color:#667085}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid article{background:#fff;border:1px solid #e2e6eb;border-radius:18px;padding:23px}.grid article span{font-size:25px}.grid h3{margin:17px 0 6px}.grid article p{color:#667085;min-height:43px;font-size:14px}.grid button,.docs button{border:0;background:none;color:#0a8f5a;font-weight:850;cursor:pointer;padding:0}
+.open-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:13px 15px;border:1px solid rgba(10,143,90,.22);border-radius:13px;background:linear-gradient(135deg,#0a8f5a,#087b4d);color:#fff!important;font-weight:850;cursor:pointer;box-shadow:0 7px 18px rgba(10,143,90,.16);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}.open-btn span:last-child{font-size:18px;transition:transform .18s ease}.open-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(10,143,90,.24);filter:brightness(1.04)}.open-btn:active{transform:translateY(0)}.open-btn:focus-visible{outline:3px solid rgba(10,143,90,.25);outline-offset:2px}.dark .open-btn{border-color:rgba(97,217,158,.2)}.dark{max-width:none;background:#111827;color:#fff;padding-left:calc(6% + (100% - 1180px)/2);padding-right:calc(6% + (100% - 1180px)/2)}.dark .heading>p,.dark article p{color:#aab2bf}.dark article{background:#192231;border-color:#293444}.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:25px}.docs button{background:#fff;border:1px solid #e2e6eb;border-radius:14px;padding:20px;text-align:left;color:#111827;font-size:15px}.darkmode{background:#0c1117;color:#f4f5f7}.darkmode .top,.darkmode footer,.darkmode .grid article,.darkmode .docs button{background:#151b23;color:#f4f5f7;border-color:#2a3442}.darkmode .top nav a,.darkmode .lead,.darkmode .heading>p,.darkmode .grid article p{color:#aab2bf}footer{display:flex;justify-content:space-between;padding:38px 6%;background:white;border-top:1px solid #e6e8ec;color:#667085}.modal{position:fixed;inset:0;background:#0008;display:grid;place-items:center;padding:20px;z-index:20}.hidden{display:none}.modalbox{position:relative;width:min(520px,100%);background:white;border-radius:20px;padding:30px;max-height:90vh;overflow:auto}.close{position:absolute;right:16px;top:9px;border:0;background:none;font-size:28px;cursor:pointer}.form{display:grid;gap:12px}.form label{font-size:13px;font-weight:750}.form input{width:100%;padding:12px;border:1px solid #dfe3e8;border-radius:10px;font:inherit}.calc{width:100%;padding:13px;border:0;border-radius:10px;background:#0a8f5a;color:#fff;font-weight:850;cursor:pointer}.result{background:#edf9f3;border-radius:12px;padding:16px;margin-top:15px}.result strong{display:block;color:#087b4d;font-size:25px}@media(max-width:850px){.top nav{display:none}.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.heading{display:block}.dark{padding-left:6%;padding-right:6%}}@media(max-width:560px){.hero,.section{padding:55px 5%}.grid,.docs{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}footer{display:block}}
+
+.manager-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
+.manager-form input{width:100%;padding:12px 13px;border:1px solid #d8dee7;border-radius:10px;background:var(--card,#fff);color:inherit}
+.manager-form button{grid-column:1/-1}
+.table-wrap{overflow:auto;border:1px solid #e5e7eb;border-radius:12px}
+.table-wrap table{width:100%;border-collapse:collapse;min-width:620px}
+.table-wrap th,.table-wrap td{padding:11px 12px;text-align:left;border-bottom:1px solid #edf0f3;font-size:.9rem}
+.table-wrap th{font-weight:700;background:#f8fafc}
+.empty-state{text-align:center;padding:28px!important;color:#6b7280}
+.danger-mini{border:0;border-radius:8px;padding:7px 10px;cursor:pointer;background:#fee2e2;color:#b91c1c}
+.report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.report-card{padding:18px;border:1px solid #e5e7eb;border-radius:14px;background:#f8fafc}
+.report-card span{display:block;font-size:.8rem;opacity:.7;margin-bottom:7px}
+.report-card strong{font-size:1.25rem}
+.report-card.wide{grid-column:1/-1}
+.report-note{font-size:.82rem;opacity:.7;margin-top:16px}
+@media(max-width:600px){
+ .manager-form,.report-grid{grid-template-columns:1fr}
+ .report-card.wide{grid-column:auto}
+}
+
+/* NaijaBiz premium calculator / invoice / currency / auth styling */
+.tool-head h2{font-family:Inter,system-ui,sans-serif;font-size:1.7rem;letter-spacing:-.03em;margin:5px 0 6px}
+.tool-head p{font-family:Inter,system-ui,sans-serif;color:#667085}
+.tool-icon{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:#eef8f2;font-size:22px;margin-bottom:12px}
+.fx-form{display:grid;grid-template-columns:1.2fr 1.5fr auto 1.5fr;gap:12px;align-items:end;margin:20px 0}
+.fx-form label,.invoice-fields input,.invoice-row input,.auth-input{font:500 15px Inter,system-ui,sans-serif}
+.fx-form label{display:grid;gap:7px;font-size:.8rem;font-weight:700;color:#667085}
+.fx-form input,.fx-form select,.invoice-fields input,.invoice-row input,.auth-input{width:100%;padding:13px 14px;border:1px solid #d9e0e7;border-radius:12px;background:#fff;color:#101828;outline:none;box-sizing:border-box}
+.fx-form input:focus,.fx-form select:focus,.invoice-fields input:focus,.invoice-row input:focus,.auth-input:focus{border-color:#15915a;box-shadow:0 0 0 3px rgba(21,145,90,.12)}
+.swap-btn{height:45px;width:45px;border:1px solid #d9e0e7;border-radius:12px;background:#f8fafc;font-size:20px;cursor:pointer}
+.full-btn{width:100%;margin-top:12px}
+.fx-result{margin-top:15px;padding:20px;border-radius:16px;background:#0d1b14;color:#fff;display:grid;gap:7px}
+.fx-result span{font-size:.85rem;opacity:.7}.fx-result strong{font-size:1.55rem;letter-spacing:-.03em}
+.fx-updated{font-size:.78rem;color:#667085;margin-top:9px}
+.invoice-builder{font-family:Inter,system-ui,sans-serif}.invoice-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.invoice-items{border:1px solid #e4e7ec;border-radius:14px;padding:14px}.invoice-item-head,.invoice-row{display:grid;grid-template-columns:1fr 90px 130px;gap:9px;align-items:center}
+.invoice-item-head{font-size:.75rem;font-weight:800;color:#667085;padding:0 3px 8px}.invoice-row{margin-bottom:9px}.invoice-note{width:100%;min-height:75px;box-sizing:border-box;margin-top:12px;padding:13px;border:1px solid #d9e0e7;border-radius:12px;font:500 14px Inter}
+.invoice-paper{background:#fff;color:#101828;padding:34px;max-width:760px;margin:auto;font-family:Inter,Arial,sans-serif}.invoice-top{display:flex;justify-content:space-between;gap:20px;border-bottom:2px solid #101828;padding-bottom:20px}.invoice-brand{font-size:22px;font-weight:850}.invoice-title{font-size:30px;font-weight:900;letter-spacing:.08em}.invoice-meta{display:flex;justify-content:space-between;gap:20px;padding:22px 0}.invoice-paper table{width:100%;border-collapse:collapse}.invoice-paper th,.invoice-paper td{padding:12px 8px;border-bottom:1px solid #e5e7eb;text-align:left}.invoice-total{margin-left:auto;max-width:280px;padding-top:15px}.invoice-total div{display:flex;justify-content:space-between;padding:5px}.invoice-total .grand{font-size:20px;border-top:2px solid #111;margin-top:8px;padding-top:12px}.invoice-thanks{margin-top:28px;padding-top:15px;border-top:1px solid #e5e7eb;color:#667085}.invoice-actions{display:flex;gap:10px;margin-top:14px}.auth-card{max-width:390px;margin:auto;text-align:center;font-family:Inter,system-ui,sans-serif}.auth-logo{width:55px;height:55px;border-radius:17px;background:#0d1b14;color:#fff;display:grid;place-items:center;margin:0 auto 12px;font-size:28px;font-weight:800}.auth-input{display:block;margin:10px 0}.auth-card small{display:block;color:#667085;margin-top:12px}.login-btn{border:0;background:#111827;color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}.ad-slot{min-height:82px;margin:20px auto;max-width:1000px;border:1px dashed #cfd6df;border-radius:14px;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#98a2b3;background:#fafbfc;font:600 12px Inter}.ad-slot small{font-weight:500;margin-top:4px}
+@media(max-width:700px){.fx-form{grid-template-columns:1fr 1fr}.swap-btn{grid-column:1/-1;justify-self:center}.invoice-fields{grid-template-columns:1fr}.invoice-row,.invoice-item-head{grid-template-columns:1fr 65px 100px}.invoice-paper{padding:20px}.invoice-top{flex-direction:column}.invoice-meta{flex-direction:column}.login-btn{padding:9px 10px}}
+
+.modal input,.modal select,.modal textarea{font-family:Inter,system-ui,sans-serif;font-size:16px;}
+
+.live-dashboard{padding-top:40px}.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.dash-card{background:#fff;border:1px solid #e2e6eb;border-radius:18px;padding:20px;box-shadow:0 8px 24px rgba(17,24,39,.05)}.dash-card span{font-size:23px}.dash-card small{display:block;color:#667085;font-weight:750;margin-top:12px}.dash-card strong{display:block;font-size:25px;letter-spacing:-.6px;margin-top:5px}.dash-card em{display:block;font-style:normal;color:#0a8f5a;font-size:12px;font-weight:750;margin-top:4px}.dashboard-panel{margin-top:18px;background:#111827;color:#fff;border-radius:20px;padding:20px}.dashboard-panel>div:first-child{display:flex;justify-content:space-between;gap:10px}.dashboard-panel>div:first-child span{color:#aab2bf;font-size:12px}.activity-bars{height:150px;display:flex;align-items:end;gap:10px;padding:20px 5px 10px}.activity-bars i{display:block;flex:1;background:#4bc98b;border-radius:8px 8px 3px 3px;min-height:10px}.activity-labels{display:flex;gap:10px;color:#aab2bf;font-size:11px}.activity-labels span{flex:1;text-align:center}.top-login{margin-left:auto;margin-right:10px}@media(max-width:850px){.dash-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.dash-grid{grid-template-columns:1fr}.top-login{margin-left:0}}
+
+/* Sales / POS */
+.pos-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:16px}.pos-card{border:1px solid #e4e7ec;border-radius:16px;padding:16px;background:#fff}.pos-card h3{margin:0 0 12px}.pos-items{display:grid;gap:10px}.pos-line{display:grid;grid-template-columns:1fr 75px 110px 36px;gap:8px;align-items:center}.pos-line input,.pos-line select{padding:11px;border:1px solid #d9e0e7;border-radius:10px;font:inherit}.pos-total{display:flex;justify-content:space-between;font-weight:900;font-size:20px;border-top:2px solid #e5e7eb;padding-top:13px;margin-top:14px}.receipt-mini{background:#f8fafb;border:1px dashed #cfd6df;border-radius:12px;padding:14px;margin-top:14px}.danger-mini{border:0;background:#fff0f0;color:#c0392b;padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:700}.pos-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pos-summary div{background:#f5faf7;border-radius:12px;padding:12px}.pos-summary small,.pos-summary strong{display:block}.darkmode .pos-card{background:#151b23;border-color:#2a3442}.darkmode .pos-line input,.darkmode .pos-line select{background:#10161d;color:#f4f5f7;border-color:#2a3442}@media(max-width:700px){.pos-grid{grid-template-columns:1fr}.pos-line{grid-template-columns:1fr 65px 95px 34px}}
+</style>
+<style>.status-badge{display:inline-block;font-size:.72rem;font-weight:700;padding:6px 9px;border-radius:999px;background:#e8f7ee;color:#18794e;margin-left:8px}.dark .status-badge{background:#173b2b;color:#8be0b0}</style></head>
+<body>
+<header class="top"><a class="brand" href="#"><b>₦</b> NaijaBiz</a>
+<nav><a href="#dashboard">Dashboard</a><a href="#tools">Tools</a><a href="#business">Business</a><a href="#documents">Documents</a></nav>
+<button id="theme" aria-label="Dark mode">☾</button><button class="login-btn top-login" onclick="loginManager()">Sign in</button><span class="status-badge" title="NaijaBiz app status">● Online-ready</span></header>
+
+<main>
+<section class="hero">
+<div><p class="eyebrow">🇳🇬 BUILT FOR NIGERIANS</p>
+<h1>Your money.<br><em>Your business.</em><br>Made simpler.</h1>
+<p class="lead">An all-in-one toolkit for profit, pricing, budgeting, invoices, receipts and everyday business calculations.</p>
+<a class="btn" href="#tools">Explore tools</a></div>
+<div class="dashboard"><div class="dash-head">Business snapshot <span>● LIVE</span></div>
+<div class="amount">₦245,800</div><small>Estimated monthly profit</small>
+<div class="stats"><div><b>₦680k</b><small>Revenue</small></div><div><b>₦434.2k</b><small>Expenses</small></div></div>
+<div class="bar"><i></i></div><small>36.1% profit margin</small></div>
+</section>
+
+<section id="dashboard" class="section live-dashboard"><div class="heading"><div><p class="eyebrow">LIVE DASHBOARD</p><h2>Your business at a glance.</h2></div><p>These numbers update from the products, customers and sales saved in NaijaBiz.</p></div><div class="dash-grid"><div class="dash-card"><span>💰</span><small>Total Sales</small><strong id="dashRevenue">₦0.00</strong><em id="dashSalesCount">0 sales</em></div><div class="dash-card"><span>📈</span><small>Total Profit</small><strong id="dashProfit">₦0.00</strong><em>From recorded sales</em></div><div class="dash-card"><span>💸</span><small>Total Expenses</small><strong id="dashExpenses">₦0.00</strong><em>Saved expenses</em></div><div class="dash-card"><span>📦</span><small>Products in Stock</small><strong id="dashProducts">0</strong><em id="dashLowStock">0 low-stock</em></div><div class="dash-card"><span>👥</span><small>Customers</small><strong id="dashCustomers">0</strong><em>Saved customers</em></div><div class="dash-card"><span>🧾</span><small>Invoices</small><strong id="dashInvoices">0</strong><em>Created documents</em></div></div><div class="dashboard-panel"><div><b>Sales activity</b><span id="dashUpdated">Updated just now</span></div><div class="activity-bars"><i style="height:22%"></i><i style="height:38%"></i><i style="height:30%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:68%"></i><i style="height:58%"></i></div><div class="activity-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div></section>
+
+<div class="ad-slot" aria-label="Advertisement"></div><section id="tools" class="section"><div class="heading"><div><p class="eyebrow">MONEY TOOLS</p><h2>Calculate smarter.</h2></div><p>Quick tools for students, workers, traders and business owners.</p></div>
+<div class="grid">
+<article><span>📈</span><h3>Profit & Loss</h3><p>Find profit, loss and percentage.</p><button class="open-btn" onclick="openTool('profit')"><span>Open tool</span><span>↗</span></button></article>
+<article><span>🏷️</span><h3>Markup & Margin</h3><p>Price products correctly.</p><button class="open-btn" onclick="openTool('markup')"><span>Open tool</span><span>↗</span></button></article>
+<article><span>💱</span><h3>Currency</h3><p>Convert naira using your rate.</p><button class="open-btn" onclick="openTool('currency')"><span>Open tool</span><span>↗</span></button></article>
+<article><span>💳</span><h3>Loan Calculator</h3><p>Estimate repayments and interest.</p><button class="open-btn" onclick="openTool('loan')"><span>Open tool</span><span>↗</span></button></article>
+<article><span>💰</span><h3>Budget Planner</h3><p>Plan income, expenses and savings.</p><button class="open-btn" onclick="openTool('budget')"><span>Open tool</span><span>↗</span></button></article>
+<article><span>%</span><h3>Percentage</h3><p>Fast percentage and discount calculations.</p><button class="open-btn" onclick="openTool('percentage')"><span>Open tool</span><span>↗</span></button></article>
+</div></section>
+
+<section id="business" class="dark section"><div class="heading"><div><p class="eyebrow">BUSINESS SUITE</p><h2>Run your business.</h2></div><p>Designed around everyday Nigerian small-business workflows.</p></div>
+<div class="grid business"><article><span>🧾</span><h3>Invoices & Receipts</h3><p>Create professional ₦ documents.</p><button class="open-btn" onclick="openTool('invoice')"><span>Open invoice</span><span>↗</span></button></article>
+<article><span>📦</span><h3>Inventory</h3><p>Track products and stock levels.</p><button class="open-btn" onclick="inventoryManager()"><span>Open inventory</span><span>↗</span></button></article>
+<article><span>🛒</span><h3>Sales / POS</h3><p>Record sales, reduce stock and create receipts.</p><button class="open-btn" onclick="salesManager()"><span>Open Sales / POS</span><span>↗</span></button></article>
+<article><span>👥</span><h3>Customers</h3><p>Keep customer records and sales.</p><button class="open-btn" onclick="customerManager()"><span>Open customers</span><span>↗</span></button></article>
+<article><span>📊</span><h3>Reports</h3><p>See revenue, expenses and profit.</p><button class="open-btn" onclick="businessReports()"><span>Open reports</span><span>↗</span></button></article></div></section>
+
+<section id="documents" class="section"><p class="eyebrow">DOCUMENTS</p><h2>Professional in minutes.</h2>
+<div class="docs"><button onclick="openTool('invoice')">🧾 Invoice</button><button onclick="openTool('invoice')">🧾 Receipt</button><button onclick="openTool('invoice')">📄 Quotation</button><button onclick="soon('Statement')">📑 Statement</button></div></section>
+</main>
+<footer><b>₦ NaijaBiz</b><span>Money and business tools made for Nigeria.</span></footer>
+<div id="modal" class="modal hidden"><div class="modalbox"><button class="close" onclick="closeTool()">×</button><div id="content"></div></div></div>
+<script>
+const modal=document.querySelector('#modal'),content=document.querySelector('#content');
+document.querySelector('#theme').onclick=()=>document.body.classList.toggle('darkmode');
+const money=n=>new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:2}).format(n);
+function openTool(t){const x={
+profit:`<p class="eyebrow">MONEY TOOL</p><h2>Profit & Loss</h2><p>Find your profit or loss.</p><div class="form"><label>Cost price (₦)<input id="c" type="number"></label><label>Selling price (₦)<input id="s" type="number"></label><button class="calc" onclick="profit()">Calculate</button></div><div id="r"></div>`,
+markup:`<p class="eyebrow">MONEY TOOL</p><h2>Markup & Margin</h2><div class="form"><label>Cost price (₦)<input id="mc" type="number"></label><label>Markup (%)<input id="mr" type="number"></label><button class="calc" onclick="markup()">Calculate</button></div><div id="r"></div>`,
+percentage:`<p class="eyebrow">MONEY TOOL</p><h2>Percentage</h2><div class="form"><label>Percentage (%)<input id="pp" type="number"></label><label>Amount (₦)<input id="aa" type="number"></label><button class="calc" onclick="percent()">Calculate</button></div><div id="r"></div>`,
+loan:`<p class="eyebrow">MONEY TOOL</p><h2>Loan Calculator</h2><div class="form"><label>Loan amount (₦)<input id="la" type="number"></label><label>Annual interest (%)<input id="ir" type="number"></label><label>Months<input id="mo" type="number"></label><button class="calc" onclick="loan()">Estimate repayment</button></div><div id="r"></div>`,
+budget:`<p class="eyebrow">MONEY TOOL</p><h2>Budget Planner</h2><div class="form"><label>Monthly income (₦)<input id="inc" type="number"></label><label>Monthly expenses (₦)<input id="exp" type="number"></label><button class="calc" onclick="budget()">Calculate balance</button></div><div id="r"></div>`,
+currency:`<div class="tool-head"><div class="tool-icon">💱</div><h2>Currency Converter</h2><p>Choose any currency from the list. Rates update automatically when you're online.</p></div><div class="fx-form"><label>Amount<input id="fxAmount" type="number" min="0" step="any" value="1" placeholder="Enter amount"></label><label>From<select id="fxFrom"></select></label><button class="swap-btn" type="button" onclick="swapCurrency()" aria-label="Swap currencies">⇄</button><label>To<select id="fxTo"></select></label></div><button class="calc full-btn" onclick="currency()">Convert</button><div id="fxStatus" class="fx-updated">Loading currency list…</div><div id="fxResult"></div>`,
+invoice:`<p class="eyebrow">BUSINESS DOCUMENT</p><h2>Invoice Builder</h2><div class="form"><label>Business name<input id="bn" placeholder="Your business"></label><label>Customer<input id="cu" placeholder="Customer"></label><label>Item / service<input id="it" placeholder="Product or service"></label><label>Amount (₦)<input id="ia" type="number"></label><button class="calc" onclick="invoice()">Create preview</button></div><div id="r"></div>`};content.innerHTML=x[t]||'<h2>Coming soon</h2>';modal.classList.remove('hidden');if(t==='currency')initCurrency()}
+function closeTool(){modal.classList.add('hidden')}modal.onclick=e=>{if(e.target===modal)closeTool()};
+function show(v){document.querySelector('#r').innerHTML='<div class="result">'+v+'</div>'}
+function profit(){let c=+document.querySelector('#c').value,s=+document.querySelector('#s').value,p=s-c;show(`<span>${p>=0?'Profit':'Loss'}</span><strong>${money(Math.abs(p))}</strong><span>${c?Math.abs(p/c*100).toFixed(2)+'%':''}</span>`)}
+function markup(){let c=+mc.value,r=+mr.value,s=c*(1+r/100);show('<span>Selling price</span><strong>'+money(s)+'</strong><span>Margin: '+((s-c)/s*100).toFixed(2)+'%</span>')}
+function percent(){show('<span>Result</span><strong>'+money(+aa.value*+pp.value/100)+'</strong>')}
+function loan(){let P=+la.value,r=+ir.value/100/12,n=+mo.value,p=r?P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1):P/n;show('<span>Monthly repayment</span><strong>'+money(p)+'</strong><span>Total: '+money(p*n)+'</span>')}
+function budget(){let b=+inc.value-+exp.value;show('<span>Monthly balance</span><strong>'+money(b)+'</strong>')}
+async function currency(){
+  const amount=Number(document.getElementById('fxAmount')?.value)||0;
+  const from=document.getElementById('fxFrom')?.value||'NGN';
+  const to=document.getElementById('fxTo')?.value||'USD';
+  const result=document.getElementById('fxResult');
+  const status=document.getElementById('fxStatus');
+  if(!amount || amount<0){result.innerHTML='<div class="result">Enter a valid amount.</div>';return}
+  status.textContent='Updating exchange rate…';
+  try{
+    const res=await fetch('https://open.er-api.com/v6/latest/'+encodeURIComponent(from));
+    if(!res.ok) throw new Error('Rate service unavailable');
+    const data=await res.json();
+    const rate=Number(data?.rates?.[to]);
+    if(!rate) throw new Error('Rate not available');
+    const converted=amount*rate;
+    result.innerHTML='<div class="fx-result"><span>'+amount.toLocaleString()+' '+from+' → '+to+'</span><strong>'+converted.toLocaleString(undefined,{maximumFractionDigits:2})+' '+to+'</strong><span>1 '+from+' = '+rate.toLocaleString(undefined,{maximumFractionDigits:6})+' '+to+'</span></div>';
+    const stamp=data.time_last_update_utc||new Date().toUTCString();
+    status.textContent='Latest available rate: '+stamp;
+  }catch(e){
+    status.textContent='Could not update the live rate. Check your internet connection and try again.';
+    result.innerHTML='<div class="result">Live currency data is temporarily unavailable.</div>';
+  }
+}
+function swapCurrency(){
+  const from=document.getElementById('fxFrom'),to=document.getElementById('fxTo');
+  if(!from||!to)return; const v=from.value; from.value=to.value; to.value=v; currency();
+}
+function initCurrency(){
+  const list={NGN:'Nigerian Naira',USD:'US Dollar',EUR:'Euro',GBP:'British Pound',GHS:'Ghanaian Cedi',KES:'Kenyan Shilling',ZAR:'South African Rand',CAD:'Canadian Dollar',AUD:'Australian Dollar',CNY:'Chinese Yuan',JPY:'Japanese Yen',INR:'Indian Rupee',AED:'UAE Dirham',SAR:'Saudi Riyal',XOF:'West African CFA Franc',BRL:'Brazilian Real',CHF:'Swiss Franc',SEK:'Swedish Krona',NOK:'Norwegian Krone',DKK:'Danish Krone',NZD:'New Zealand Dollar',SGD:'Singapore Dollar',HKD:'Hong Kong Dollar',TRY:'Turkish Lira',RUB:'Russian Ruble',MXN:'Mexican Peso',EGP:'Egyptian Pound'};
+  const from=document.getElementById('fxFrom'),to=document.getElementById('fxTo'); if(!from||!to)return;
+  const options=Object.entries(list).map(([code,name])=>`<option value="${code}">${code} — ${name}</option>`).join('');
+  from.innerHTML=options; to.innerHTML=options; from.value='NGN'; to.value='USD';
+  document.getElementById('fxStatus').textContent='Currency list ready. Rates update automatically when online.';
+}
+function invoice(){
+  showModal(`
+    <div class="invoice-builder">
+      <div class="tool-head"><div class="tool-icon">🧾</div><h2>Professional Invoice</h2><p>Create a clean invoice and print/save it as PDF from Chrome.</p></div>
+      <div class="invoice-fields">
+        <input id="invBusiness" placeholder="Business name" value="NaijaBiz Business">
+        <input id="invPhone" placeholder="Phone / WhatsApp">
+        <input id="invCustomer" placeholder="Customer name">
+        <input id="invDate" type="date" value="${new Date().toISOString().slice(0,10)}">
+        <input id="invNumber" placeholder="Invoice number" value="INV-${Date.now().toString().slice(-6)}">
+        <input id="invTax" type="number" min="0" step="0.01" placeholder="Tax % (optional)" value="0">
+      </div>
+      <div class="invoice-items">
+        <div class="invoice-item-head"><span>Item</span><span>Qty</span><span>Price</span></div>
+        <div id="invoiceRows">
+          <div class="invoice-row"><input placeholder="Product/service"><input class="qty" type="number" min="1" value="1"><input class="price" type="number" min="0" step="0.01" value="0"></div>
+        </div>
+        <button type="button" class="secondary-btn" onclick="addInvoiceRow()">+ Add item</button>
+      </div>
+      <textarea id="invNote" class="invoice-note" placeholder="Payment note / thank you message">Thank you for your business.</textarea>
+      <button type="button" class="primary-btn full-btn" onclick="previewInvoice()">Preview Invoice</button>
+    </div>
+  `);
+}
+function addInvoiceRow(){
+  document.getElementById("invoiceRows").insertAdjacentHTML("beforeend",
+    `<div class="invoice-row"><input placeholder="Product/service"><input class="qty" type="number" min="1" value="1"><input class="price" type="number" min="0" step="0.01" value="0"></div>`);
+}
+function previewInvoice(){
+  const rows=[...document.querySelectorAll("#invoiceRows .invoice-row")].map(r=>({
+    name:r.children[0].value||"Item",qty:Number(r.querySelector(".qty").value)||0,price:Number(r.querySelector(".price").value)||0
+  }));
+  const subtotal=rows.reduce((s,x)=>s+x.qty*x.price,0), taxPct=Number(document.getElementById("invTax").value)||0, tax=subtotal*taxPct/100, total=subtotal+tax;
+  const business=document.getElementById("invBusiness").value||"NaijaBiz Business";
+  const customer=document.getElementById("invCustomer").value||"Customer";
+  const phone=document.getElementById("invPhone").value||"";
+  const date=document.getElementById("invDate").value;
+  const number=document.getElementById("invNumber").value||"INVOICE";
+  const note=document.getElementById("invNote").value||"Thank you for your business.";
+  const rowsHtml=rows.map(x=>`<tr><td>${escapeHtml(x.name)}</td><td>${x.qty}</td><td>${naira(x.price)}</td><td>${naira(x.qty*x.price)}</td></tr>`).join("");
+  showModal(`
+    <div class="invoice-paper" id="printInvoice">
+      <div class="invoice-top"><div><div class="invoice-brand">${escapeHtml(business)}</div><div>${escapeHtml(phone)}</div></div><div class="invoice-title">INVOICE</div></div>
+      <div class="invoice-meta"><div><b>Bill to</b><br>${escapeHtml(customer)}</div><div><b>Invoice #</b> ${escapeHtml(number)}<br><b>Date</b> ${escapeHtml(date)}</div></div>
+      <table><thead><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead><tbody>${rowsHtml}</tbody></table>
+      <div class="invoice-total"><div>Subtotal <b>${naira(subtotal)}</b></div><div>Tax (${taxPct}%) <b>${naira(tax)}</b></div><div class="grand">Total <b>${naira(total)}</b></div></div>
+      <div class="invoice-thanks">${escapeHtml(note)}</div>
+    </div>
+    <div class="invoice-actions"><button class="primary-btn" onclick="printInvoice()">Print / Save PDF</button><button class="secondary-btn" onclick="invoice()">Edit</button></div>
+  `);
+}
+function printInvoice(){
+  const paper=document.getElementById("printInvoice");
+  const win=window.open("","_blank");
+  win.document.write(`<html><head><title>Invoice</title><style>body{font-family:Arial,sans-serif;padding:30px;color:#111}.invoice-paper{max-width:800px;margin:auto}.invoice-top{display:flex;justify-content:space-between;border-bottom:2px solid #111;padding-bottom:20px}.invoice-title{font-size:30px;font-weight:800}.invoice-brand{font-size:22px;font-weight:800}.invoice-meta{display:flex;justify-content:space-between;padding:25px 0}table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #ddd;text-align:left}.invoice-total{margin-left:auto;max-width:280px;padding-top:20px}.invoice-total div{display:flex;justify-content:space-between;padding:6px}.grand{font-size:20px;border-top:2px solid #111;margin-top:8px;padding-top:12px}.invoice-thanks{margin-top:35px;padding-top:15px;border-top:1px solid #ddd}</style></head><body>${paper.outerHTML}</body></html>`);
+  win.document.close(); win.focus(); win.print();
+}
+
+
+
+function getStoredArray(key){try{return JSON.parse(localStorage.getItem(key)||"[]")}catch(e){return []}}
+function setStoredArray(key,value){localStorage.setItem(key,JSON.stringify(value))}
+function showManager(html){content.innerHTML=html;modal.classList.remove('hidden')}
+function inventoryManager(){const items=getStoredArray('naijabiz_inventory');showManager(`<div class="tool-head"><div class="tool-icon">📦</div><h2>Inventory</h2><p>Add products, track stock and see stock value. Data is saved on this device.</p></div><div class="invoice-fields"><input id="invProduct" placeholder="Product name"><input id="invSku" placeholder="SKU / code"><input id="invPrice" type="number" min="0" step="0.01" placeholder="Selling price (₦)"><input id="invStock" type="number" min="0" step="1" placeholder="Stock quantity"></div><button class="primary-btn full-btn" onclick="saveInventoryItem()">+ Add product</button><div style="margin-top:18px">${renderInventoryTable(items)}</div>`)}
+function saveInventoryItem(){const product=document.getElementById('invProduct').value.trim(),sku=document.getElementById('invSku').value.trim(),price=Number(document.getElementById('invPrice').value)||0,stock=Number(document.getElementById('invStock').value)||0;if(!product)return alert('Enter a product name.');const items=getStoredArray('naijabiz_inventory');items.push({id:Date.now(),product,sku,price,stock});setStoredArray('naijabiz_inventory',items);updateDashboard();inventoryManager()}
+function deleteInventoryItem(id){setStoredArray('naijabiz_inventory',getStoredArray('naijabiz_inventory').filter(x=>x.id!==id));inventoryManager()}
+function renderInventoryTable(items){if(!items.length)return '<div class="result"><span>No products yet</span><small>Add your first product above.</small></div>';const rows=items.map(x=>`<tr><td>${escapeHtml(x.product)}</td><td>${escapeHtml(x.sku||'—')}</td><td>${naira(x.price)}</td><td>${x.stock}</td><td><button class="danger-mini" onclick="deleteInventoryItem(${x.id})">Delete</button></td></tr>`).join('');return `<div class="table-wrap"><table><thead><tr><th>Product</th><th>SKU</th><th>Price</th><th>Stock</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>`}
+function customerManager(){const customers=getStoredArray('naijabiz_customers');showManager(`<div class="tool-head"><div class="tool-icon">👥</div><h2>Customers</h2><p>Save customer contact records on this device.</p></div><div class="invoice-fields"><input id="custName" placeholder="Customer name"><input id="custPhone" placeholder="Phone / WhatsApp"><input id="custEmail" type="email" placeholder="Email (optional)"></div><button class="primary-btn full-btn" onclick="saveCustomer()">+ Add customer</button><div style="margin-top:18px">${renderCustomerTable(customers)}</div>`)}
+function saveCustomer(){const name=document.getElementById('custName').value.trim(),phone=document.getElementById('custPhone').value.trim(),email=document.getElementById('custEmail').value.trim();if(!name)return alert('Enter the customer name.');const customers=getStoredArray('naijabiz_customers');customers.push({id:Date.now(),name,phone,email});setStoredArray('naijabiz_customers',customers);updateDashboard();customerManager()}
+function deleteCustomer(id){setStoredArray('naijabiz_customers',getStoredArray('naijabiz_customers').filter(x=>x.id!==id));customerManager()}
+function renderCustomerTable(items){if(!items.length)return '<div class="result"><span>No customers yet</span><small>Add your first customer above.</small></div>';const rows=items.map(x=>`<tr><td>${escapeHtml(x.name)}</td><td>${escapeHtml(x.phone||'—')}</td><td>${escapeHtml(x.email||'—')}</td><td><button class="danger-mini" onclick="deleteCustomer(${x.id})">Delete</button></td></tr>`).join('');return `<div class="table-wrap"><table><thead><tr><th>Name</th><th>Phone</th><th>Email</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>`}
+function salesManager(){
+  const items=getStoredArray('naijabiz_inventory'), customers=getStoredArray('naijabiz_customers'), sales=getStoredArray('naijabiz_sales');
+  if(!items.length){showManager('<div class="tool-head"><div class="tool-icon">🛒</div><h2>Sales / POS</h2><p>Add products in Inventory first, then come back here to record a sale.</p></div><button class="primary-btn full-btn" onclick="inventoryManager()">Open Inventory</button>');return}
+  const options=items.map(x=>`<option value="${x.id}">${escapeHtml(x.product)} — ${naira(x.price)} (${x.stock} in stock)</option>`).join('');
+  const custOptions='<option value="">Walk-in customer</option>'+customers.map(x=>`<option value="${x.id}">${escapeHtml(x.name)}</option>`).join('');
+  showManager(`<div class="tool-head"><div class="tool-icon">🛒</div><h2>Sales / POS</h2><p>Record a sale. Stock is reduced automatically and the sale is added to your dashboard.</p></div>
+  <div class="pos-grid"><div class="pos-card"><h3>New sale</h3><label class="form">Customer<select id="posCustomer" style="padding:13px;border:1px solid #d9e0e7;border-radius:12px;font:inherit">${custOptions}</select></label><div id="posItems" class="pos-items" style="margin-top:14px"></div><button class="secondary-btn full-btn" onclick="addPosLine()">+ Add another item</button><div class="pos-total"><span>Total</span><span id="posTotal">${naira(0)}</span></div><button class="primary-btn full-btn" style="margin-top:14px" onclick="completeSale()">Complete Sale & Create Receipt</button></div>
+  <div class="pos-card"><h3>Sales summary</h3><div class="pos-summary"><div><small>All sales</small><strong>${sales.length}</strong></div><div><small>Revenue</small><strong>${naira(sales.reduce((a,x)=>a+Number(x.total||0),0))}</strong></div></div><div class="receipt-mini"><b>How it works</b><p style="margin:8px 0 0;color:#667085">Choose products and quantities. NaijaBiz checks stock, records the sale, reduces inventory and creates a printable receipt.</p></div></div></div>`);
+  window._posOptions=options; addPosLine();
+}
+function addPosLine(){const box=document.getElementById('posItems');if(!box)return;const row=document.createElement('div');row.className='pos-line';row.innerHTML=`<select class="pos-product" onchange="updatePosTotal()">${window._posOptions||''}</select><input class="pos-qty" type="number" min="1" value="1" oninput="updatePosTotal()"><input class="pos-price" type="number" min="0" step="0.01" value="0" readonly><button class="danger-mini" type="button" onclick="this.parentElement.remove();updatePosTotal()">×</button>`;box.appendChild(row);syncPosPrices();}
+function syncPosPrices(){document.querySelectorAll('.pos-line').forEach(row=>{const id=Number(row.querySelector('.pos-product').value),item=getStoredArray('naijabiz_inventory').find(x=>Number(x.id)===id);if(item)row.querySelector('.pos-price').value=Number(item.price)||0});updatePosTotal()}
+function updatePosTotal(){syncPosPricesOnce();const total=[...document.querySelectorAll('.pos-line')].reduce((a,row)=>a+(Number(row.querySelector('.pos-price').value)||0)*(Number(row.querySelector('.pos-qty').value)||0),0);const el=document.getElementById('posTotal');if(el)el.textContent=naira(total)}
+function syncPosPricesOnce(){document.querySelectorAll('.pos-line').forEach(row=>{const id=Number(row.querySelector('.pos-product').value),item=getStoredArray('naijabiz_inventory').find(x=>Number(x.id)===id);if(item)row.querySelector('.pos-price').value=Number(item.price)||0})}
+function completeSale(){
+  const rows=[...document.querySelectorAll('.pos-line')]; if(!rows.length)return alert('Add at least one product.');
+  const items=getStoredArray('naijabiz_inventory'); const cart=[];
+  for(const row of rows){const id=Number(row.querySelector('.pos-product').value),qty=Math.max(1,Number(row.querySelector('.pos-qty').value)||1),item=items.find(x=>Number(x.id)===id);if(!item)return alert('A selected product is no longer available.');if(Number(item.stock)<qty)return alert(`Not enough stock for ${item.product}. Available: ${item.stock}`);cart.push({id:item.id,product:item.product,qty,price:Number(item.price)||0,total:qty*(Number(item.price)||0)})}
+  const total=cart.reduce((a,x)=>a+x.total,0), customerId=Number(document.getElementById('posCustomer')?.value)||null,customer=getStoredArray('naijabiz_customers').find(x=>Number(x.id)===customerId);const sale={id:Date.now(),date:new Date().toISOString(),customer:customer?.name||'Walk-in customer',customerId,items:cart,total,profit:total};
+  cart.forEach(c=>{const item=items.find(x=>Number(x.id)===c.id);item.stock=Number(item.stock)-c.qty});setStoredArray('naijabiz_inventory',items);const sales=getStoredArray('naijabiz_sales');sales.push(sale);setStoredArray('naijabiz_sales',sales);updateDashboard();showReceipt(sale);}
+function showReceipt(sale){showManager(`<div class="tool-head"><div class="tool-icon">🧾</div><h2>Sale completed</h2><p>Receipt ${escapeHtml(String(sale.id))} is ready.</p></div><div class="invoice-paper" id="saleReceipt"><div class="invoice-top"><div><div class="invoice-brand">NaijaBiz</div><div>Money & Business Toolkit</div></div><div class="invoice-title">RECEIPT</div></div><div class="invoice-meta"><div><b>Customer</b><br>${escapeHtml(sale.customer)}</div><div><b>Receipt #</b> ${sale.id}<br><b>Date</b> ${new Date(sale.date).toLocaleString()}</div></div><table><thead><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead><tbody>${sale.items.map(x=>`<tr><td>${escapeHtml(x.product)}</td><td>${x.qty}</td><td>${naira(x.price)}</td><td>${naira(x.total)}</td></tr>`).join('')}</tbody></table><div class="invoice-total"><div class="grand">Total <b>${naira(sale.total)}</b></div></div><div class="invoice-thanks">Thank you for your business.</div></div><div class="invoice-actions"><button class="primary-btn" onclick="printSaleReceipt()">Print / Save PDF</button><button class="secondary-btn" onclick="salesManager()">New Sale</button></div>`)}
+function printSaleReceipt(){const paper=document.getElementById('saleReceipt');if(!paper)return;const win=window.open('','_blank','width=850,height=700');win.document.write(`<html><head><title>Receipt</title><style>body{font-family:Arial,sans-serif;padding:30px;color:#111}.invoice-paper{max-width:800px;margin:auto}.invoice-top{display:flex;justify-content:space-between;border-bottom:2px solid #111;padding-bottom:20px}.invoice-title{font-size:30px;font-weight:800}.invoice-brand{font-size:22px;font-weight:800}.invoice-meta{display:flex;justify-content:space-between;padding:25px 0}table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #ddd;text-align:left}.invoice-total{margin-left:auto;max-width:280px;padding-top:20px}.grand{font-size:20px;border-top:2px solid #111;margin-top:8px;padding-top:12px}.invoice-thanks{margin-top:35px;padding-top:15px;border-top:1px solid #ddd}</style></head><body>${paper.outerHTML}</body></html>`);win.document.close();win.focus();win.print()}
+
+function businessReports(){const items=getStoredArray('naijabiz_inventory'),customers=getStoredArray('naijabiz_customers'),sales=getStoredArray('naijabiz_sales');const stockValue=items.reduce((sum,x)=>sum+(Number(x.price)||0)*(Number(x.stock)||0),0),salesRevenue=sales.reduce((sum,x)=>sum+(Number(x.total)||0),0);showManager(`<div class="tool-head"><div class="tool-icon">📊</div><h2>Business Reports</h2><p>A quick overview from the data saved in this browser.</p></div><div class="report-grid"><div class="report-card"><span>Products</span><strong>${items.length}</strong></div><div class="report-card"><span>Customers</span><strong>${customers.length}</strong></div><div class="report-card"><span>Stock value</span><strong>${naira(stockValue)}</strong></div><div class="report-card"><span>Recorded sales</span><strong>${naira(salesRevenue)}</strong></div><div class="report-card wide"><span>Status</span><strong>Business data is saved locally on this device.</strong></div></div>`)}
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, ch => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
+  }[ch]));
+}
+
+
+
+function getAuthUser(){try{return JSON.parse(localStorage.getItem("naijabiz_user")||"null")}catch(e){return null}}
+function saveAuthUser(user){localStorage.setItem("naijabiz_user",JSON.stringify(user));updateDashboard()}
+function loginManager(){
+  const user=getAuthUser();
+  showModal(user?
+    `<div class="auth-card"><div class="auth-logo">₦</div><h2>Welcome back</h2><p>You are signed in as <b>${escapeHtml(user.email)}</b>.</p><button class="primary-btn full-btn" onclick="logoutNaijaBiz()">Log out</button></div>`:
+    `<div class="auth-card"><div class="auth-logo">₦</div><h2>Sign in to NaijaBiz</h2><p>Use your account details to access your workspace.</p><input id="loginEmail" class="auth-input" type="email" placeholder="Email address"><input id="loginPassword" class="auth-input" type="password" placeholder="Password"><button class="primary-btn full-btn" onclick="loginNaijaBiz()">Sign in</button><button class="secondary-btn full-btn" onclick="openSignupForm()">Create account</button></div>`);
+}
+function openSignupForm(){
+  showModal(`<div class="auth-card"><div class="auth-logo">₦</div><h2>Create your NaijaBiz account</h2><p>Create an account to use your workspace.</p><input id="signupName" class="auth-input" type="text" placeholder="Full name"><input id="signupEmail" class="auth-input" type="email" placeholder="Email address"><input id="signupPassword" class="auth-input" type="password" placeholder="Password"><button class="primary-btn full-btn" onclick="signupNaijaBiz()">Create account</button><button class="secondary-btn full-btn" onclick="loginManager()">Back to sign in</button></div>`);
+}
+function signupNaijaBiz(){
+  const name=document.getElementById('signupName')?.value.trim(),email=document.getElementById('signupEmail')?.value.trim().toLowerCase(),password=document.getElementById('signupPassword')?.value;
+  if(!name)return alert('Enter your full name first.');
+  if(!/^\S+@\S+\.\S+$/.test(email))return alert('Enter a valid email address.');
+  if(!password||password.length<6)return alert('Use a password with at least 6 characters.');
+  localStorage.setItem('naijabiz_local_account',JSON.stringify({name,email,password}));
+  saveAuthUser({name,email,verified:true});
+  loginManager();
+}
+function loginNaijaBiz(){
+  const email=document.getElementById('loginEmail')?.value.trim().toLowerCase(),password=document.getElementById('loginPassword')?.value;
+  let account=null;try{account=JSON.parse(localStorage.getItem('naijabiz_local_account')||'null')}catch(e){}
+  if(!account)return alert('No account found. Create an account first.');
+  if(email!==account.email||password!==account.password)return alert('Incorrect email or password.');
+  saveAuthUser({name:account.name,email:account.email,verified:true});
+  loginManager();
+}
+function logoutNaijaBiz(){localStorage.removeItem('naijabiz_user');updateDashboard();loginManager()}
+
+function updateDashboard(){const inv=getStoredArray('naijabiz_inventory'),customers=getStoredArray('naijabiz_customers'),sales=getStoredArray('naijabiz_sales'),expenses=getStoredArray('naijabiz_expenses'),invoices=getStoredArray('naijabiz_invoices');const revenue=sales.reduce((s,x)=>s+(Number(x.total)||0),0),profit=sales.reduce((s,x)=>s+(Number(x.profit??x.total??0)||0),0),expenseTotal=expenses.reduce((s,x)=>s+(Number(x.amount)||0),0),low=inv.filter(x=>Number(x.stock)<=5).length,products=inv.reduce((s,x)=>s+(Number(x.stock)||0),0);const set=(id,val)=>{const el=document.getElementById(id);if(el)el.textContent=val};set('dashRevenue',naira(revenue));set('dashProfit',naira(profit));set('dashExpenses',naira(expenseTotal));set('dashProducts',products);set('dashCustomers',customers.length);set('dashInvoices',invoices.length);set('dashSalesCount',sales.length+' sale'+(sales.length===1?'':'s'));set('dashLowStock',low+' low-stock');set('dashUpdated','Updated '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}))}
+function insertAdSlots(){
+  document.querySelectorAll(".ad-slot").forEach(x=>x.innerHTML='<span>Advertisement</span><small>Ad space — connect your approved ad network here.</small>');
+}
+insertAdSlots();
+updateDashboard();
+
+</script>
+</body></html>
